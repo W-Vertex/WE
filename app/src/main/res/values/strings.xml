@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WE</string>
+    <string name="date_count_service_name">root.we.DateCountService</string>
+</resources>
