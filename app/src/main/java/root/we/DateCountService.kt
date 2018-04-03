@@ -32,8 +32,9 @@ class DateCountService: Service() {
     }
 
     private fun setBadge(){
-        val dateCount = DateCount.getDateCount(Pref.getDate(this))
-        ShortcutBadger.applyCount(this, dateCount)
+        DateCountModel.getDateCount(this)?.let {
+            ShortcutBadger.applyCount(this, it)
+        }
     }
 
     private fun getTime(): Long{
