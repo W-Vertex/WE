@@ -23,7 +23,9 @@ class MainActivity: AppCompatActivity(){
 
     override fun onStart() {
         super.onStart()
-        if (!presentor.isServiceRunning()){ startService(Intent(this, DateCountService::class.java)) }
+        presentor.requestDateStr()?.let {
+            if (!presentor.isServiceRunning()){ startService(Intent(this, DateCountService::class.java)) }
+        }
     }
 
     private fun init(){
